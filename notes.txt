@@ -1,0 +1,8 @@
+Eval
+	-First task is to call the parseline function, which parses the        space-separated command line arguments and builds the argv            vector 
+	-The first argument is assumed to be the name of a built in shell      that is interpretted immediately or an exectuable object file        that will run in the context of a new child process
+	-If the last argument is an '&' character, then parseline returns     1, indicating that the program should be executed in the             background,thus the shell does not wait for it to complete
+	Otherwise it returns 0, indicating that the program should be run     in the foreground, thus the shell waits for it to complete
+	-If builtin_command returns 0, then the shell creates a child         process and executes the requested program inside the child.
+	-If the user has asked for the program to run in the background,    then the shell retuns to the top of the loop and waits for the        next commands line
+	- Otherwise the shell uses the waipid function to wait for the      job to terminate 
